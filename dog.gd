@@ -16,7 +16,7 @@ func _physics_process(delta):
 	# Check distance - stop moving if too close
 	if global_transform.origin.distance_to(player.global_transform.origin) > follow_distance:
 		velocity = direction * speed  # Move toward player
-		# Rotate the dog to face the movement direction
+		# Rotate the dog to face the player
 		var look_at_position = player.global_transform.origin
 		look_at(Vector3(look_at_position.x, global_transform.origin.y, look_at_position.z), Vector3.UP)
 	
