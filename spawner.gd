@@ -2,7 +2,7 @@ extends Node3D
 
 @export var cat_scene: PackedScene  # Assign cat.tscn in Inspector
 @export var dog_scene: PackedScene  # Assign dog.tscn in Inspector
-@export var spawn_area: Vector3 = Vector3(10, 5, 10)  # X, Y, Z area size
+@export var spawn_area: Vector3 = Vector3(30, 5, 30)  # X, Y, Z area size
 @export var spawn_interval: float = 0.5  # How often new animals fall
 
 var is_raining = false  # Controls when the rain starts
