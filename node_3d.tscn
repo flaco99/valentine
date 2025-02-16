@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b21vnp4qrdvlv"]
+[gd_scene load_steps=8 format=3 uid="uid://b21vnp4qrdvlv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_v0o8w"]
 [ext_resource type="ArrayMesh" uid="uid://bubmph2qs6nty" path="res://blocky_character.obj" id="2_dqxal"]
+[ext_resource type="Environment" uid="uid://dgut7boj322bj" path="res://main-environment.tres" id="3_w2v5p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7t32"]
 size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ey47l"]
 size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w41v2"]
+albedo_color = Color(0.34062, 0.63, 0.3024, 0.721569)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2kqw"]
 size = Vector3(10, 1, 10)
@@ -33,9 +37,15 @@ current = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_ey47l")
+surface_material_override/0 = SubResource("StandardMaterial3D_w41v2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_e2kqw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_w2v5p")
