@@ -9,6 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://clwwcxy78g46b" path="res://blocky_character_v2.obj" id="7_ldiqh"]
 [ext_resource type="ArrayMesh" uid="uid://diwmm4533wc14" path="res://holdflower.obj" id="8_tich8"]
 [ext_resource type="ArrayMesh" uid="uid://b5xqfo87701ji" path="res://lilypad.obj" id="8_yw6xm"]
+[ext_resource type="ArrayMesh" uid="uid://dv8tsww7fwrom" path="res://12221_Cat_v1_l3.obj" id="9_h0en8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8p3n"]
 albedo_color = Color(0.446796, 0.284046, 0.859465, 1)
@@ -31,9 +32,6 @@ albedo_color = Color(0.6, 0.5056, 0.246, 0.498039)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7g30"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bjucj"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_dd8wk"]
-size = Vector3(0.2, 0.2, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlqa6"]
 albedo_color = Color(0, 0, 0, 1)
@@ -116,20 +114,22 @@ mesh = ExtResource("8_tich8")
 shape = SubResource("CapsuleShape3D_bjucj")
 
 [node name="teto" type="CharacterBody3D" parent="Person"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Person/teto"]
-mesh = SubResource("BoxMesh_dd8wk")
+transform = Transform3D(-0.02, 1.74846e-09, 7.64274e-17, 0, -8.74228e-10, 0.02, 1.74846e-09, 0.02, 8.74228e-10, 0, -0.2, 0)
+mesh = ExtResource("9_h0en8")
 surface_material_override/0 = SubResource("StandardMaterial3D_wlqa6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Person/teto"]
 shape = SubResource("BoxShape3D_e2rws")
 
 [node name="muku" type="CharacterBody3D" parent="Person"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Person/muku"]
-mesh = SubResource("BoxMesh_dd8wk")
+transform = Transform3D(-0.02, 1.74846e-09, 7.64274e-17, 0, -8.74228e-10, 0.02, 1.74846e-09, 0.02, 8.74228e-10, 0, -0.2, 0)
+mesh = ExtResource("9_h0en8")
 surface_material_override/0 = SubResource("StandardMaterial3D_wlqa6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Person/muku"]
