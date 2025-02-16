@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b21vnp4qrdvlv"]
+[gd_scene load_steps=24 format=3 uid="uid://b21vnp4qrdvlv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_v0o8w"]
 [ext_resource type="ArrayMesh" uid="uid://8kl8rso8cork" path="res://medium_hair_blocky_character.obj" id="2_t3ckk"]
@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://diwmm4533wc14" path="res://holdflower.obj" id="8_tich8"]
 [ext_resource type="ArrayMesh" uid="uid://b5xqfo87701ji" path="res://lilypad.obj" id="8_yw6xm"]
 [ext_resource type="ArrayMesh" uid="uid://dv8tsww7fwrom" path="res://12221_Cat_v1_l3.obj" id="9_h0en8"]
+[ext_resource type="PackedScene" uid="uid://r340xpdabcov" path="res://spawner.tscn" id="11_8fe8v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8p3n"]
 albedo_color = Color(0.446796, 0.284046, 0.859465, 1)
@@ -95,12 +96,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_t8nwt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dog"]
 shape = SubResource("BoxShape3D_k7g30")
 
-[node name="Person" type="CharacterBody3D" parent="." node_paths=PackedStringArray("player", "flowers_mesh", "normal_mesh")]
+[node name="Person" type="CharacterBody3D" parent="." node_paths=PackedStringArray("player", "flowers_mesh", "normal_mesh", "rain_spawner")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
 script = ExtResource("5_44oot")
 player = NodePath("../Player")
 flowers_mesh = NodePath("flowermesh")
 normal_mesh = NodePath("initialmesh")
+rain_spawner = NodePath("../spawner")
 
 [node name="initialmesh" type="MeshInstance3D" parent="Person"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
@@ -145,3 +147,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wtsvd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lily1"]
 shape = SubResource("CylinderShape3D_fb6yc")
+
+[node name="spawner" parent="." instance=ExtResource("11_8fe8v")]

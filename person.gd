@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var player: CharacterBody3D  # Drag the player into this in Inspector
 @export var flowers_mesh: MeshInstance3D  # Drag the "flowers" mesh in the Inspector
 @export var normal_mesh: MeshInstance3D  # Drag the normal dog mesh here
+@export var rain_spawner: Node3D  # Assign RainSpawner here
 var is_found = false
 var rotation_speed: float = 3.0
 
@@ -30,6 +31,9 @@ func _physics_process(delta: float) -> void:
 		if flowers_mesh and normal_mesh:
 			normal_mesh.visible = true
 			flowers_mesh.visible = true
+		# rain
+		if rain_spawner:
+			rain_spawner.start_rain()
 	
 	if (is_found):
 		# Rotate to face the player

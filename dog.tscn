@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdt0lpdej8nxl"]
+
+[ext_resource type="ArrayMesh" uid="uid://dsr4645urewyf" path="res://uploads_files_2967429_dog.OBJ" id="1_rg5na"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kn3s5"]
+albedo_color = Color(0.6, 0.5056, 0.246, 0.498039)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gi8i8"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, -0.5, 0)
+mesh = ExtResource("1_rg5na")
+surface_material_override/0 = SubResource("StandardMaterial3D_kn3s5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_gi8i8")
