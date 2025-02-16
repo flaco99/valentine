@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b21vnp4qrdvlv"]
+[gd_scene load_steps=23 format=3 uid="uid://b21vnp4qrdvlv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_v0o8w"]
 [ext_resource type="ArrayMesh" uid="uid://8kl8rso8cork" path="res://medium_hair_blocky_character.obj" id="2_t3ckk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://person.gd" id="5_44oot"]
 [ext_resource type="ArrayMesh" uid="uid://dsr4645urewyf" path="res://uploads_files_2967429_dog.OBJ" id="5_dsdpe"]
 [ext_resource type="ArrayMesh" uid="uid://cn6c3suuoudeu" path="res://rose.obj" id="7_br2a1"]
+[ext_resource type="ArrayMesh" uid="uid://b5xqfo87701ji" path="res://lilypad.obj" id="8_yw6xm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8p3n"]
 albedo_color = Color(0.446796, 0.284046, 0.859465, 1)
@@ -41,6 +42,13 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2rws"]
 size = Vector3(0.2, 0.2, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtsvd"]
+albedo_color = Color(0.49648, 0.87, 0.3828, 0.831373)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fb6yc"]
+height = 0.05
+radius = 1.0
 
 [node name="Node3D" type="Node3D"]
 
@@ -127,3 +135,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wlqa6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Person/muku"]
 shape = SubResource("BoxShape3D_e2rws")
+
+[node name="lily1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.5, 17)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="lily1"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0, 0)
+mesh = ExtResource("8_yw6xm")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtsvd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lily1"]
+shape = SubResource("CylinderShape3D_fb6yc")
