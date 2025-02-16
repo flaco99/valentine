@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b21vnp4qrdvlv"]
+[gd_scene load_steps=9 format=3 uid="uid://b21vnp4qrdvlv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_v0o8w"]
 [ext_resource type="ArrayMesh" uid="uid://8kl8rso8cork" path="res://medium_hair_blocky_character.obj" id="2_t3ckk"]
 [ext_resource type="Environment" uid="uid://dgut7boj322bj" path="res://main-environment.tres" id="3_w2v5p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r8im"]
+albedo_color = Color(0.273, 0.26, 0.52, 0.521569)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7t32"]
 size = Vector3(1, 2, 1)
@@ -24,6 +27,7 @@ script = ExtResource("1_v0o8w")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0)
 mesh = ExtResource("2_t3ckk")
+surface_material_override/0 = SubResource("StandardMaterial3D_8r8im")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("BoxShape3D_v7t32")
