@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		print("happy valentines")
 		# Show flowers 
 		if flowers_mesh and normal_mesh:
-			normal_mesh.visible = false
+			normal_mesh.visible = true
 			flowers_mesh.visible = true
 	
 	if (is_found):

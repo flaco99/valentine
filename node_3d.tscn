@@ -6,7 +6,8 @@
 [ext_resource type="Script" path="res://dog.gd" id="4_of423"]
 [ext_resource type="Script" path="res://person.gd" id="5_44oot"]
 [ext_resource type="ArrayMesh" uid="uid://dsr4645urewyf" path="res://uploads_files_2967429_dog.OBJ" id="5_dsdpe"]
-[ext_resource type="ArrayMesh" uid="uid://cn6c3suuoudeu" path="res://rose.obj" id="7_br2a1"]
+[ext_resource type="ArrayMesh" uid="uid://clwwcxy78g46b" path="res://blocky_character_v2.obj" id="7_ldiqh"]
+[ext_resource type="ArrayMesh" uid="uid://diwmm4533wc14" path="res://holdflower.obj" id="8_tich8"]
 [ext_resource type="ArrayMesh" uid="uid://b5xqfo87701ji" path="res://lilypad.obj" id="8_yw6xm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8p3n"]
@@ -28,9 +29,6 @@ size = Vector3(30, 1, 30)
 albedo_color = Color(0.6, 0.5056, 0.246, 0.498039)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k7g30"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_igdye"]
-size = Vector3(0.5, 2, 0.5)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bjucj"]
 
@@ -107,11 +105,12 @@ flowers_mesh = NodePath("flowermesh")
 normal_mesh = NodePath("initialmesh")
 
 [node name="initialmesh" type="MeshInstance3D" parent="Person"]
-mesh = SubResource("BoxMesh_igdye")
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+mesh = ExtResource("7_ldiqh")
 
 [node name="flowermesh" type="MeshInstance3D" parent="Person"]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
-mesh = ExtResource("7_br2a1")
+transform = Transform3D(-10, 8.74228e-07, 3.82137e-14, 0, -4.37114e-07, 10, 8.74228e-07, 10, 4.37114e-07, 0, 0, 0)
+mesh = ExtResource("8_tich8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Person"]
 shape = SubResource("CapsuleShape3D_bjucj")
